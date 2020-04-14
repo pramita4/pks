@@ -5,12 +5,12 @@ math(){
 }
 accounts(){                         #make sure all files exist
 	touch statement.txt
-	touch cb.txt
+	touch fd.txt
 	touch sb.txt
-	touch bb.txt
-	FixedDeposit=`cat cb.txt`      #get balances
+	touch aa.txt
+	FixedDeposit=`cat fd.txt`      #get balances
 	savingsBalance=`cat sb.txt`
-	ActiveAccount=`cat bb.txt`
+	ActiveAccount=`cat aa.txt`
 }
 get_args(){
   #read the user's inputs
@@ -66,8 +66,8 @@ logTransaction(){
 	echo -n "$tpr\$$value" >> statement.txt
 	echo "Completed on $date_of" >> statement.txt
 	echo "" >> statement.txt
-	echo $ActiveAccount > bb.txt
-	echo $FixedDeposit > cb.txt
+	echo $ActiveAccount > aa.txt
+	echo $FixedDeposit > fd.txt
 	echo $savingsBalance > sb.txt
 }
 accounts
